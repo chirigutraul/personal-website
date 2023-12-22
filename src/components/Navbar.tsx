@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800 bg-opacity-40 fixed left-0 right-0 text-blue-50 p-4">
+    <nav className="bg-gray-800 bg-opacity-0 hover:bg-opacity-40 transition-all duration-150 fixed left-0 right-0 text-blue-50 p-4">
       <div className='hidden desktop-navbar md:flex items-center justify-between'>
         <h1 className="text-2xl font-medium font-sans">Chirigut Raul</h1>
         <ul className="flex justify-between items-center text-lg font-medium">
