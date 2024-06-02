@@ -7,33 +7,59 @@
 @layer base {
   html {
     font-family: Montserrat, sans-serif;
+
+    --text-ratio:1.200;
+    --text-base-size: 16px;
+    --text-base-line-height: 1.2;
+
+    --text-ratio-2: calc(var(--text-ratio) * var(--text-ratio));
+    --text-ratio-3: calc(var(--text-ratio-2) * var(--text-ratio));
+    --text-ratio-4: calc(var(--text-ratio-3) * var(--text-ratio));
+    --text-ratio-5: calc(var(--text-ratio-4) * var(--text-ratio));
+    --text-ratio-6: calc(var(--text-ratio-5) * var(--text-ratio));
+
+    --navbar-height: 64px;
+
+    @media (min-width: 640px) {
+      --text-ratio: 1.250;
+      --navbar-height: 106px;
+    }
+
+    @media (min-width: 1024px){
+      --text-ratio: 1.333;
+      --navbar-height: 102px;
+    }
   }
 
   h1,h2,h3,h4,h5,h6{
     font-weight: 700;
   }
-  
+
   h6 {
-    font-size: 21px;
+    font-size: calc(var(--text-base-size) * var(--text-ratio));
   }
 
   h5 {
-    font-size: 28px;
+    font-size: calc(var(--text-base-size) * var(--text-ratio-2));
   }
 
   h4 {
-    font-size: 38px;
+    font-size: calc(var(--text-base-size) * var(--text-ratio-3));
   }
 
   h3 {
-    font-size: 50px;
+    font-size: calc(var(--text-base-size) * var(--text-ratio-4));
   }
 
   h2 {
-    font-size: 67px;
+    font-size: calc(var(--text-base-size) * var(--text-ratio-5));
   }
 
   h1 {
-    font-size: 89px;
+    font-size: calc(var(--text-base-size) * var(--text-ratio-6));
+  }
+
+  .navbar-margin {
+    margin-top: var(--navbar-height);
   }
 }
