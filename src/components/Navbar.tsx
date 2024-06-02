@@ -21,7 +21,7 @@ const MobileHamburgerMenu = () => {
         </button>
       </div>
       {mobileMenu && (
-        <nav className="flex flex-col justify-center px-8 py-4 text-white h-svh bg-medium-grey">
+        <nav className="fixed flex flex-col justify-center w-full px-8 py-4 text-white h-svh bg-medium-grey">
           <ul className="flex flex-col gap-8">
             {MENU_LINKS.map((item, index) => (
               <li

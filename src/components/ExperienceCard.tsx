@@ -19,7 +19,9 @@ const ExperienceCard = ({
         {points.map((point, index) => {
           return (
             <li key={`point-${index}`}>
-              <Description text={point} />
+              <h6>
+                <Description text={point} />
+              </h6>
             </li>
           );
         })}

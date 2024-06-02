@@ -6,11 +6,11 @@ const About = () => {
       id="about"
       className="px-8 py-20 text-white min-h-svh bg-gradient-to-t from-black to-medium-grey md:px-16"
     >
-      <div className="navbar-margin">
+      <div className="flex flex-col gap-8 navbar-margin md:gap-16">
         <div id="#title-container" className="">
           <h1>About me</h1>
         </div>
-        <div>
+        <div className="max-w-[120ch]">
           <h4>
             Hello! <br /> <br /> I am Chirigut Raul, a committed and
             enthusiastic Software Engineer with a focus on{" "}
