@@ -15,7 +15,7 @@ const MobileHamburgerMenu = () => {
 
   return (
     <div className="sm:hidden">
-      <div className="absolute top-0 left-0 right-0 flex justify-end p-4 bg-medium-grey">
+      <div className="fixed top-0 left-0 right-0 flex justify-end p-4 bg-medium-grey">
         <button onClick={toggleMenu}>
           <img src={appsSvg} className="w-8" />
         </button>
@@ -42,7 +42,7 @@ const MobileHamburgerMenu = () => {
 
 const DesktopNavbar = () => {
   return (
-    <nav className="absolute hidden w-full text-white sm:block bg-medium-grey">
+    <nav className="fixed hidden w-full text-white sm:block bg-medium-grey">
       <ul className="flex justify-end gap-8 px-16 py-8">
         {MENU_LINKS.map((item, index) => (
           <li
