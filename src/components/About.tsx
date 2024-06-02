@@ -3,7 +3,7 @@ import AccentText from "./AccentText";
 const About = () => {
   return (
     <div
-      id="#hero-section"
+      id="about"
       className="px-8 py-20 text-white min-h-svh bg-gradient-to-t from-black to-medium-grey md:px-16"
     >
       <div className="navbar-margin">

@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <div
-      id="#hero-section"
+      id="hero-section"
       className="px-8 py-20 text-white min-h-svh bg-gradient-to-b from-black to-medium-grey md:py-40 md:px-16"
     >
       <div className="flex flex-col gap-32 navbar-margin md:grid-cols-2 md:flex-row md:justify-between">

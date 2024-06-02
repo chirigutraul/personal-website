@@ -29,6 +29,8 @@
       --text-ratio: 1.333;
       --navbar-height: 102px;
     }
+
+    scroll-behavior: smooth;
   }
 
   h1,h2,h3,h4,h5,h6{
