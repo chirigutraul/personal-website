@@ -1,15 +1,19 @@
 import Description from "./Description";
 
-const ExperienceCard = ({
-  role,
-  company,
-  period,
-  points,
-}: {
+import { FC } from "react";
+
+interface ExperienceCardProps {
   role: string;
   company: string;
   period: string;
   points: string[];
+}
+
+const ExperienceCard: FC<ExperienceCardProps> = ({
+  role,
+  company,
+  period,
+  points,
 }) => {
   return (
     <div>

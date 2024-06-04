@@ -1,8 +1,10 @@
-type AccentTextProps = {
-  text: string;
-};
+import { FC } from "react";
 
-const AccentText = ({ text }: AccentTextProps) => {
+interface AccentTextProps {
+  text: string;
+}
+
+const AccentText: FC<AccentTextProps> = ({ text }) => {
   return <span className="text-secondary">{text}</span>;
 };
 

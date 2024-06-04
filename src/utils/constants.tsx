@@ -44,9 +44,9 @@ export const EXPERIENCES = [
     company: "Nanolabs Electronics",
     period: "(2023-present)",
     points: [
-      "Designing, planning, and breaking down new features.",
-      "Providing technical support to new team members.",
-      "Enhanced project development time by reconstructing the communication between parts of our system.",
+      "- Designing, planning, and breaking down new features.",
+      "- Providing technical support to new team members.",
+      "- Enhanced project development time by reconstructing the communication between parts of our system.",
     ],
   },
   {
@@ -54,9 +54,9 @@ export const EXPERIENCES = [
     company: "Webom Creative Development",
     period: "(2022-2023)",
     points: [
-      "Applied logical thinking to design and develop efficient solutions for our clients.",
-      "Improved the codebase of four full-stack projects by adhering to clean code principles like DRY and  SOLID.",
-      "Led the frontend development for a React-Native application in collaboration with the NHS.",
+      "- Applied logical thinking to design and develop efficient solutions for our clients.",
+      "- Improved the codebase of four full-stack projects by adhering to clean code principles like DRY and  SOLID.",
+      "- Led the frontend development for a React-Native application in collaboration with the NHS.",
     ],
   },
   {
@@ -64,9 +64,11 @@ export const EXPERIENCES = [
     role: "QA Tester",
     period: "(2021-2022)",
     points: [
-      "Developed excellent communication skills through collaboration with an international team",
-      "Identified and reported over 200 core-tech issues using Jira and Confluence",
-      "Provided guidance to new team members during onboarding processes",
+      "- Developed excellent communication skills through collaboration with an international team",
+      "- Identified and reported over 200 core-tech issues using Jira and Confluence",
+      "- Provided guidance to new team members during onboarding processes",
     ],
   },
 ];
+
+export const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

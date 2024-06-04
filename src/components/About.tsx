@@ -4,9 +4,9 @@ const About = () => {
   return (
     <div
       id="about"
-      className="px-8 py-20 text-white min-h-svh bg-gradient-to-t from-black to-medium-grey md:px-16"
+      className="px-8 py-8 text-white md:py-16 min-h-svh bg-gradient-to-t from-black to-medium-grey md:px-16"
     >
-      <div className="flex flex-col gap-8 navbar-margin md:gap-16">
+      <div className="flex flex-col gap-8 navbar-margin md:gap-x-16">
         <div id="#title-container" className="">
           <h1>About me</h1>
         </div>
