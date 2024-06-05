@@ -13,15 +13,14 @@ const Hero = () => {
             <h4>Crafting robust software as a solution for your problems</h4>
           </div>
           <div>
-            <button className="px-6 py-3 rounded-full bg-primary">
-              <h4>Let's connect!</h4>
+            <button className="px-6 py-3 rounded-full bg-primary md:px-12 md:py-6">
+              <a href="#contact">
+                <h4>Let's connect!</h4>
+              </a>
             </button>
           </div>
         </div>
-        <div
-          id="#artwork-container"
-          className="w-[256px] h-[256px] bg-primary"
-        ></div>
+        <div id="#artwork-container" className=""></div>
       </div>
     </div>
   );

@@ -50,7 +50,8 @@ const Contact = () => {
     console.log("Errors:", errors);
   }, [errors]);
 
-  const submitMessage = () => {
+  const submitMessage = (event: any) => {
+    event.preventDefault();
     console.log("Form values:", formValues);
     const isFormValid = validateForm();
 
