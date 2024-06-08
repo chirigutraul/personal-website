@@ -1,4 +1,11 @@
+import Button from "./Button";
+
 const Hero = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    contactSection?.scrollIntoView();
+  };
+
   return (
     <div
       id="hero-section"
@@ -13,11 +20,12 @@ const Hero = () => {
             <h4>Crafting robust software as a solution for your problems</h4>
           </div>
           <div>
-            <button className="px-6 py-3 rounded-full bg-primary md:px-12 md:py-6">
-              <a href="#contact">
-                <h4>Let's connect!</h4>
-              </a>
-            </button>
+            <Button
+              text="Let's connect!"
+              size="large"
+              type="primary"
+              onClick={scrollToContact}
+            />
           </div>
         </div>
         <div id="#artwork-container" className=""></div>
