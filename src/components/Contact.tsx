@@ -4,6 +4,7 @@ import TextArea from "./TextArea";
 import { EMAIL_REGEX } from "../utils/constants";
 import Button from "./Button";
 import emailjs from "@emailjs/browser";
+import { toastService } from "../services/toast";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -71,10 +72,12 @@ const Contact = () => {
         .then(
           (result) => {
             setIsEmailLoading(false);
+            toastService.success("Email sent successfully!");
             console.log("Email sent successfully: ", result.status);
           },
           (error) => {
             setIsEmailLoading(false);
+            toastService.error("Message sent successfully!");
             console.log("Failed to send email. Error: ", error);
           }
         );
