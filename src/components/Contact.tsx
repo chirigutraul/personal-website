@@ -1,10 +1,12 @@
-import { MouseEventHandler, useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useRef, useState } from "react";
 import Input from "./Input";
 import TextArea from "./TextArea";
 import { EMAIL_REGEX } from "../utils/constants";
 import Button from "./Button";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement | null>(null);
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
@@ -47,20 +49,31 @@ const Contact = () => {
     return valid;
   };
 
-  useEffect(() => {
-    console.log("Errors:", errors);
-  }, [errors]);
-
   const submitMessage: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
-    console.log("Form values:", formValues);
     const isFormValid = validateForm();
 
     if (!isFormValid) {
-      return console.log("Form is invalid!", errors);
+      return;
     }
 
-    return console.log("Form is valid.");
+    if (formRef && formRef.current) {
+      emailjs
+        .sendForm(
+          import.meta.env.VITE_SERVICE_ID,
+          import.meta.env.VITE_TEMPLATE_ID,
+          formRef.current,
+          import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
   };
 
   return (
@@ -73,7 +86,7 @@ const Contact = () => {
           <div className="pb-8">
             <h1>Contact</h1>
           </div>
-          <form className="flex flex-col gap-8">
+          <form className="flex flex-col gap-8" ref={formRef}>
             <h4>Send me a message:</h4>
             <Input
               type="text"

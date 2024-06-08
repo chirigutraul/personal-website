@@ -8,6 +8,7 @@ interface ButtonProps {
   onClick: MouseEventHandler<HTMLButtonElement>;
   size: "small" | "medium" | "large";
   type: "primary" | "secondary" | "gradient-1" | "gradient-2" | "gradient-3";
+  disabled: boolean;
 }
 
 /**
@@ -19,7 +20,13 @@ interface ButtonProps {
  * @param {string} props.type - The type of the button ("primary" | "secondary" | "gradient-1" | "gradient-2" | "gradient-3").
  * @returns {JSX.Element} Button component
  */
-const Button: FC<ButtonProps> = ({ text, onClick, size, type }) => {
+const Button: FC<ButtonProps> = ({
+  text,
+  onClick,
+  size,
+  type,
+  disabled = false,
+}) => {
   const buttonPadding = COMPONENTS.BUTTON.PADDING[size];
   const buttonColor = COMPONENTS.BUTTON.COLORS[type];
 
@@ -38,6 +45,7 @@ const Button: FC<ButtonProps> = ({ text, onClick, size, type }) => {
 
   return (
     <button
+      disabled={disabled}
       className={`${buttonColor} ${buttonPadding} rounded-full`}
       onClick={onClick}
     >
