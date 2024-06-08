@@ -9,7 +9,7 @@ const About = () => {
     >
       <div className="flex flex-col items-center gap-16 navbar-margin xl:flex-row md:justify-between">
         <div className="flex flex-col gap-8">
-          <div id="#title-container" className="">
+          <div id="#title-container">
             <h1>About me</h1>
           </div>
           <div className="max-w-[100ch]">
