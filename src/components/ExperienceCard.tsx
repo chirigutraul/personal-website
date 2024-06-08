@@ -17,8 +17,8 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
 }) => {
   return (
     <div>
-      <h4>{role} </h4>
-      <h5>{`${company} ${period}`}</h5>
+      <h4 className="pb-2">{role} </h4>
+      <p className="pb-4">{`${company} ${period}`}</p>
       <ul>
         {points.map((point, index) => {
           return (
