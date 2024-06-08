@@ -72,3 +72,21 @@ export const EXPERIENCES = [
 ];
 
 export const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+export const COMPONENTS = {
+  BUTTON: {
+    PADDING: {
+      small: "px-2 py-1",
+      medium: "px-4 py-2",
+      large: "px-6 py-3",
+    },
+    COLORS: {
+      primary: "bg-primary text-white",
+      secondary: "bg-secondary text-white",
+      "gradient-1": "bg-gradient-to-b from-black to-medium-grey text-white",
+      "gradient-2": "bg-gradient-to-t from-black to-medium-grey text-white",
+      "gradient-3": "bg-gradient-to-b from-black to-primary text-white",
+      "gradient-4": "bg-gradient-to-t from-black to-primary text-white",
+    },
+  },
+};

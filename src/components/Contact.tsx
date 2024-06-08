@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 import Input from "./Input";
 import TextArea from "./TextArea";
 import { EMAIL_REGEX } from "../utils/constants";
+import Button from "./Button";
 
 const Contact = () => {
   const [formValues, setFormValues] = useState({
@@ -50,7 +51,7 @@ const Contact = () => {
     console.log("Errors:", errors);
   }, [errors]);
 
-  const submitMessage = (event: any) => {
+  const submitMessage: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
     console.log("Form values:", formValues);
     const isFormValid = validateForm();
@@ -69,7 +70,7 @@ const Contact = () => {
     >
       <div className="grid grid-cols-1 gap-8 navbar-margin lg:grid-cols-2 md:gap-16 md:justify-between">
         <div id="#title-container">
-          <div>
+          <div className="pb-8">
             <h1>Contact</h1>
           </div>
           <form className="flex flex-col gap-8">
@@ -97,7 +98,14 @@ const Contact = () => {
               setFormValues={onChangeValue}
               validationError={errors.message}
             />
-            <button onClick={submitMessage}>Send</button>
+            <div>
+              <Button
+                text="Submit"
+                onClick={submitMessage}
+                size="medium"
+                type="primary"
+              />
+            </div>
           </form>
         </div>
         <div className="text-right">
