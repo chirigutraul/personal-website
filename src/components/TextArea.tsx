@@ -16,8 +16,6 @@ const TextArea: FC<TextAreaProps> = ({
   validationError,
 }) => {
   const changeFormValues = (value: string) => {
-    console.log("Field name:", fieldName);
-    console.log("Event value:", value);
     setFormValues(fieldName, value);
   };
 

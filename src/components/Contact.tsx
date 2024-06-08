@@ -7,6 +7,8 @@ import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [isEmailLoading, setIsEmailLoading] = useState(false);
+
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
@@ -58,6 +60,7 @@ const Contact = () => {
     }
 
     if (formRef && formRef.current) {
+      setIsEmailLoading(true);
       emailjs
         .sendForm(
           import.meta.env.VITE_SERVICE_ID,
@@ -67,10 +70,12 @@ const Contact = () => {
         )
         .then(
           (result) => {
-            console.log(result.text);
+            setIsEmailLoading(false);
+            console.log("Email sent successfully: ", result.status);
           },
           (error) => {
-            console.log(error.text);
+            setIsEmailLoading(false);
+            console.log("Failed to send email. Error: ", error);
           }
         );
     }
@@ -117,6 +122,7 @@ const Contact = () => {
                 onClick={submitMessage}
                 size="medium"
                 type="primary"
+                loading={isEmailLoading}
               />
             </div>
           </form>

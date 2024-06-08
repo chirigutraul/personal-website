@@ -2,6 +2,7 @@ import { FC } from "react";
 import { COMPONENTS } from "../utils/constants";
 
 import { MouseEventHandler } from "react";
+import Loader from "./Loader";
 
 interface ButtonProps {
   text: string;
@@ -9,6 +10,7 @@ interface ButtonProps {
   size: "small" | "medium" | "large";
   type: "primary" | "secondary" | "gradient-1" | "gradient-2" | "gradient-3";
   disabled?: boolean;
+  loading?: boolean;
 }
 
 /**
@@ -26,6 +28,7 @@ const Button: FC<ButtonProps> = ({
   size,
   type,
   disabled = false,
+  loading = false,
 }) => {
   const buttonPadding = COMPONENTS.BUTTON.PADDING[size];
   const buttonColor = COMPONENTS.BUTTON.COLORS[type];
@@ -46,10 +49,11 @@ const Button: FC<ButtonProps> = ({
   return (
     <button
       disabled={disabled}
-      className={`${buttonColor} ${buttonPadding} rounded-full`}
+      className={`${buttonColor} ${buttonPadding} rounded-full flex gap-2 items-center`}
       onClick={onClick}
     >
       {getButtonText(size, text)}
+      {loading && <Loader size="small" />}
     </button>
   );
 };

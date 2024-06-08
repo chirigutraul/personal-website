@@ -83,6 +83,7 @@ export const COMPONENTS = {
     COLORS: {
       primary: "bg-primary text-white",
       secondary: "bg-secondary text-white",
+      success: "bg-success text-white",
       "gradient-1": "bg-gradient-to-b from-black to-medium-grey text-white",
       "gradient-2": "bg-gradient-to-t from-black to-medium-grey text-white",
       "gradient-3": "bg-gradient-to-b from-black to-primary text-white",
