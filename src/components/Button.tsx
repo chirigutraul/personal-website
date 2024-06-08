@@ -8,7 +8,7 @@ interface ButtonProps {
   onClick: MouseEventHandler<HTMLButtonElement>;
   size: "small" | "medium" | "large";
   type: "primary" | "secondary" | "gradient-1" | "gradient-2" | "gradient-3";
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 /**

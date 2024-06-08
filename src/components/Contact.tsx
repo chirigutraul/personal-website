@@ -1,4 +1,4 @@
-import { MouseEventHandler, useEffect, useRef, useState } from "react";
+import { MouseEventHandler, useRef, useState } from "react";
 import Input from "./Input";
 import TextArea from "./TextArea";
 import { EMAIL_REGEX } from "../utils/constants";

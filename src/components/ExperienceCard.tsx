@@ -24,7 +24,7 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
           return (
             <li key={`point-${index}`}>
               <h6>
-                <Description text={point} />
+                <Description text={point} key={`description-point-${index}`} />
               </h6>
             </li>
           );

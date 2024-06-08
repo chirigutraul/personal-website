@@ -5,9 +5,9 @@ const Description = ({ text }: { text: string }) => {
   const words = text.split(" ");
   return (
     <>
-      {words.map((word) => {
+      {words.map((word, index) => {
         if (!RED_WORDS[word]) return `${word} `;
-        return <AccentText text={`${word} `} />;
+        return <AccentText key={`${word}-${index}`} text={`${word} `} />;
       })}
     </>
   );

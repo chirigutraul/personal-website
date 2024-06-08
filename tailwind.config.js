@@ -11,6 +11,7 @@ export default {
         "dark-grey": "#082724",
         "medium-grey": "#18534D",
         "light-grey": "#588F8A",
+        success: "#5cb85c",
       },
     },
   },
