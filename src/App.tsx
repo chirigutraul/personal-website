@@ -1,6 +1,7 @@
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import { ToastContainer } from "react-toastify";
@@ -14,6 +15,7 @@ function App() {
       <About />
       <Experience />
       <Contact />
+      <Footer />
       <ToastContainer />
     </>
   );
