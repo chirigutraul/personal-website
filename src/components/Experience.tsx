@@ -14,6 +14,7 @@ const Experience = () => {
             return (
               <ExperienceCard
                 key={`experience-${index}`}
+                experienceId={experience.id}
                 role={experience.role}
                 company={experience.company}
                 period={experience.period}

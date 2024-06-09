@@ -1,12 +1,10 @@
 import { MouseEventHandler, useEffect, useRef, useState } from "react";
 import Input from "./Input";
 import TextArea from "./TextArea";
-import { EMAIL_REGEX, EXTERNAL_LINKS } from "../utils/constants";
+import { EMAIL_REGEX, EXTERNAL_LINKS, ICONS } from "../utils/constants";
 import Button from "./Button";
 import emailjs from "@emailjs/browser";
 import { toastService } from "../services/toast";
-import linkedIn from "../assets/linkedin.svg";
-import github from "../assets/github.svg";
 
 interface UserData {
   ip: string;
@@ -199,13 +197,13 @@ const Contact = () => {
           <div className="flex gap-8 p-4 rounded-md bg-medium-grey">
             <a href={EXTERNAL_LINKS.LINKED_IN}>
               <img
-                src={linkedIn}
+                src={ICONS.LINKED_IN}
                 alt="Linkedin icon"
                 className="w-16 rounded-md"
               />
             </a>
             <a href={EXTERNAL_LINKS.GITHUB}>
-              <img src={github} alt="Github icon" className="w-16" />
+              <img src={ICONS.GIT} alt="Github icon" className="w-16" />
             </a>
           </div>
         </div>

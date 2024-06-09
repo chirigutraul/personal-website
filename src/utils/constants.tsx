@@ -1,3 +1,21 @@
+import ReactIcon from "../assets/react.svg";
+import NodeIcon from "../assets/nodejs.svg";
+import JavascriptIcon from "../assets/javascript.svg";
+import TypescriptIcon from "../assets/typescript.svg";
+import HtmlIcon from "../assets/html.svg";
+import CssIcon from "../assets/css.svg";
+import MongodbIcon from "../assets/mongodb.svg";
+import PostgresqlIcon from "../assets/postgresql.svg";
+import GitIcon from "../assets/git.svg";
+import JiraIcon from "../assets/jira.svg";
+import ConfluenceIcon from "../assets/confluence.svg";
+import DockerIcon from "../assets/docker.svg";
+import NestIcon from "../assets/nestjs.svg";
+import ReduxIcon from "../assets/redux.svg";
+import RedisIcon from "../assets/redis.svg";
+import GraphqlIcon from "../assets/graphql.svg";
+import LinkedIn from "../assets/linkedin.svg";
+
 export const MENU_LINKS = [
   {
     title: "</>",
@@ -40,6 +58,7 @@ export const RED_WORDS: Record<string, string> = {
 
 export const EXPERIENCES = [
   {
+    id: "NANO",
     role: "Full-Stack Engineer",
     company: "Nanolabs Electronics",
     period: "(2023-present)",
@@ -50,6 +69,7 @@ export const EXPERIENCES = [
     ],
   },
   {
+    id: "WEBOM",
     role: "Full-Stack Engineer",
     company: "Webom Creative Development",
     period: "(2022-2023)",
@@ -60,6 +80,7 @@ export const EXPERIENCES = [
     ],
   },
   {
+    id: "EA",
     company: "Electronic Arts",
     role: "QA Tester",
     period: "(2021-2022)",
@@ -95,4 +116,129 @@ export const COMPONENTS = {
 export const EXTERNAL_LINKS = {
   LINKED_IN: "https://www.linkedin.com/in/chirigutraul/",
   GITHUB: "https://github.com/chirigutraul",
+};
+
+export const ICONS = {
+  GIT: GitIcon,
+  JIRA: JiraIcon,
+  CONFLUENCE: ConfluenceIcon,
+  DOCKER: DockerIcon,
+  NEST: NestIcon,
+  REDUX: ReduxIcon,
+  REDIS: RedisIcon,
+  GRAPHQL: GraphqlIcon,
+  REACT: ReactIcon,
+  NODE: NodeIcon,
+  JAVASCRIPT: JavascriptIcon,
+  TYPESCRIPT: TypescriptIcon,
+  HTML: HtmlIcon,
+  CSS: CssIcon,
+  MONGODB: MongodbIcon,
+  POSTGRESQL: PostgresqlIcon,
+  LINKED_IN: LinkedIn,
+};
+
+export const TECHNOLOGIES = {
+  REACT: {
+    name: "React",
+    icon: ICONS.REACT,
+  },
+  REACT_NATIVE: {
+    name: "React Native",
+    icon: ICONS.REACT,
+  },
+  NODE: {
+    name: "Node",
+    icon: ICONS.NODE,
+  },
+  JAVASCRIPT: {
+    name: "Javascript",
+    icon: ICONS.JAVASCRIPT,
+  },
+  TYPESCRIPT: {
+    name: "Typescript",
+    icon: ICONS.TYPESCRIPT,
+  },
+  HTML: {
+    name: "HTML",
+    icon: ICONS.HTML,
+  },
+  CSS: {
+    name: "CSS",
+    icon: ICONS.CSS,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    icon: ICONS.MONGODB,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    icon: ICONS.POSTGRESQL,
+  },
+  GIT: {
+    name: "Git",
+    icon: ICONS.GIT,
+  },
+  JIRA: {
+    name: "Jira",
+    icon: ICONS.JIRA,
+  },
+  CONFLUENCE: {
+    name: "Confluence",
+    icon: ICONS.CONFLUENCE,
+  },
+  DOCKER: {
+    name: "Docker",
+    icon: ICONS.DOCKER,
+  },
+  NEST: {
+    name: "Nest JS",
+    icon: ICONS.NEST,
+  },
+  REDUX: {
+    name: "Redux",
+    icon: ICONS.REDUX,
+  },
+  REDIS: {
+    name: "Redis",
+    icon: ICONS.REDIS,
+  },
+  GRAPHQL: {
+    name: "GraphQL",
+    icon: ICONS.GRAPHQL,
+  },
+};
+
+export const TECH_USED: { [key: string]: { name: string; icon: string }[] } = {
+  NANO: [
+    TECHNOLOGIES.HTML,
+    TECHNOLOGIES.CSS,
+    TECHNOLOGIES.JAVASCRIPT,
+    TECHNOLOGIES.REACT,
+    TECHNOLOGIES.NODE,
+    TECHNOLOGIES.MONGODB,
+    TECHNOLOGIES.GIT,
+    TECHNOLOGIES.JIRA,
+    TECHNOLOGIES.CONFLUENCE,
+    TECHNOLOGIES.DOCKER,
+    TECHNOLOGIES.REDIS,
+  ],
+  WEBOM: [
+    TECHNOLOGIES.HTML,
+    TECHNOLOGIES.CSS,
+    TECHNOLOGIES.JAVASCRIPT,
+    TECHNOLOGIES.TYPESCRIPT,
+    TECHNOLOGIES.REACT,
+    TECHNOLOGIES.NODE,
+    TECHNOLOGIES.POSTGRESQL,
+    TECHNOLOGIES.GIT,
+    TECHNOLOGIES.JIRA,
+    TECHNOLOGIES.CONFLUENCE,
+    TECHNOLOGIES.DOCKER,
+    TECHNOLOGIES.NEST,
+    TECHNOLOGIES.REDUX,
+    TECHNOLOGIES.REACT_NATIVE,
+    TECHNOLOGIES.GRAPHQL,
+  ],
+  EA: [TECHNOLOGIES.JIRA, TECHNOLOGIES.CONFLUENCE],
 };
