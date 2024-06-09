@@ -1,14 +1,32 @@
-import { MouseEventHandler, useRef, useState } from "react";
+import { MouseEventHandler, useEffect, useRef, useState } from "react";
 import Input from "./Input";
 import TextArea from "./TextArea";
-import { EMAIL_REGEX } from "../utils/constants";
+import { EMAIL_REGEX, EXTERNAL_LINKS } from "../utils/constants";
 import Button from "./Button";
 import emailjs from "@emailjs/browser";
 import { toastService } from "../services/toast";
+import linkedIn from "../assets/linkedin.svg";
+import github from "../assets/github.svg";
+
+interface UserData {
+  ip: string;
+  country: string;
+  region: string;
+  city: string;
+  org: string;
+}
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [isEmailLoading, setIsEmailLoading] = useState(false);
+
+  const [connectedUserData, setConnectedUserData] = useState<UserData>({
+    ip: "",
+    country: "",
+    region: "",
+    city: "",
+    org: "",
+  });
 
   const [formValues, setFormValues] = useState({
     name: "",
@@ -84,12 +102,32 @@ const Contact = () => {
     }
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const userData: UserData = await (
+        await fetch("https://ipapi.co/json/")
+      ).json();
+
+      if (userData) {
+        setConnectedUserData({
+          ip: userData.ip,
+          country: userData.country,
+          region: userData.region,
+          city: userData.city,
+          org: userData.org,
+        });
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div
       id="contact"
       className="px-8 py-8 text-white md:py-16 min-h-svh bg-gradient-to-t from-black to-medium-grey md:px-16"
     >
-      <div className="grid grid-cols-1 gap-8 navbar-margin lg:grid-cols-2 md:gap-16 md:justify-between">
+      <div className="grid items-center grid-cols-1 gap-8 navbar-margin lg:grid-cols-2 md:gap-16 md:justify-between">
         <div id="#title-container">
           <div className="pb-8">
             <h1>Contact</h1>
@@ -119,6 +157,32 @@ const Contact = () => {
               setFormValues={onChangeValue}
               validationError={errors.message}
             />
+            <input type="text" hidden name="ip" value={connectedUserData.ip} />
+            <input
+              type="text"
+              hidden
+              name="country"
+              value={connectedUserData.country}
+            />
+            <input
+              type="text"
+              hidden
+              name="region"
+              value={connectedUserData.region}
+            />
+            <input
+              type="text"
+              hidden
+              name="city"
+              value={connectedUserData.city}
+            />
+            <input
+              type="text"
+              hidden
+              name="org"
+              value={connectedUserData.org}
+            />
+
             <div>
               <Button
                 text="Submit"
@@ -130,10 +194,20 @@ const Contact = () => {
             </div>
           </form>
         </div>
-        <div className="text-right">
-          <h4>Or reach out on:</h4>
-          <h4>Linkedin</h4>
-          <h4>Twitter</h4>
+        <div className="flex flex-col items-end gap-8 text-right pt-36">
+          <h4>Find me on:</h4>
+          <div className="flex gap-8 p-4 rounded-md bg-medium-grey">
+            <a href={EXTERNAL_LINKS.LINKED_IN}>
+              <img
+                src={linkedIn}
+                alt="Linkedin icon"
+                className="w-16 rounded-md"
+              />
+            </a>
+            <a href={EXTERNAL_LINKS.GITHUB}>
+              <img src={github} alt="Github icon" className="w-16" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

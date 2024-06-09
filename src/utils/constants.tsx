@@ -91,3 +91,8 @@ export const COMPONENTS = {
     },
   },
 };
+
+export const EXTERNAL_LINKS = {
+  LINKED_IN: "https://www.linkedin.com/in/chirigutraul/",
+  GITHUB: "https://github.com/chirigutraul",
+};
