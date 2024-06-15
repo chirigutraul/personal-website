@@ -5,6 +5,7 @@ interface InputProps {
   label: string;
   placeholder: string;
   fieldName: string;
+  value: string;
   setFormValues: (fieldName: string, value: string) => void;
   validationError?: string;
 }
@@ -14,6 +15,7 @@ const Input: FC<InputProps> = ({
   label,
   placeholder,
   fieldName,
+  value,
   setFormValues,
   validationError,
 }) => {
@@ -27,10 +29,12 @@ const Input: FC<InputProps> = ({
         <h6>{label}</h6>
       </label>
       <input
+        name={fieldName}
         type={type}
         className="w-full h-full p-4 bg-medium-grey placeholder:text-white placeholder:text-xl rounded-xl"
         placeholder={placeholder}
         onChange={({ target: { value } }) => changeFormValues(value)}
+        value={value}
       />
       {validationError && (
         <span>

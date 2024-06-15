@@ -4,6 +4,7 @@ interface TextAreaProps {
   label: string;
   placeholder: string;
   fieldName: string;
+  value: string;
   setFormValues: (fieldName: string, value: string) => void;
   validationError?: string;
 }
@@ -12,6 +13,7 @@ const TextArea: FC<TextAreaProps> = ({
   label,
   placeholder,
   fieldName,
+  value,
   setFormValues,
   validationError,
 }) => {
@@ -29,6 +31,7 @@ const TextArea: FC<TextAreaProps> = ({
         className="w-full min-h-[20ch] p-4 bg-medium-grey placeholder:text-white placeholder:text-xl rounded-xl"
         placeholder={placeholder}
         onChange={({ target: { value } }) => changeFormValues(value)}
+        value={value}
       />
       {validationError && (
         <span>

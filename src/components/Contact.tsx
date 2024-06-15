@@ -89,12 +89,12 @@ const Contact = () => {
           (result) => {
             setIsEmailLoading(false);
             toastService.success("Email sent successfully!");
-            console.log("Email sent successfully: ", result.status);
+            console.info("Email sent successfully: ", result.status);
           },
           (error) => {
             setIsEmailLoading(false);
             toastService.error("Message sent successfully!");
-            console.log("Failed to send email. Error: ", error);
+            console.info("Failed to send email. Error: ", error);
           }
         );
     }
@@ -137,6 +137,7 @@ const Contact = () => {
               label="Name"
               placeholder="Your name here"
               fieldName="name"
+              value={formValues.name}
               setFormValues={onChangeValue}
               validationError={errors.name}
             />
@@ -145,6 +146,7 @@ const Contact = () => {
               label="E-mail"
               placeholder="Your email here"
               fieldName="email"
+              value={formValues.email}
               setFormValues={onChangeValue}
               validationError={errors.email}
             />
@@ -152,6 +154,7 @@ const Contact = () => {
               label="Message"
               placeholder="Your message here"
               fieldName="message"
+              value={formValues.message}
               setFormValues={onChangeValue}
               validationError={errors.message}
             />
