@@ -1,5 +1,5 @@
 import AccentText from "./AccentText";
-import grinding from "../assets/grinding.gif";
+import grinding from "../assets/gifs/grinding.gif";
 
 const About = () => {
   return (

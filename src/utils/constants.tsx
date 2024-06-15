@@ -1,20 +1,21 @@
-import ReactIcon from "../assets/react.svg";
-import NodeIcon from "../assets/nodejs.svg";
-import JavascriptIcon from "../assets/javascript.svg";
-import TypescriptIcon from "../assets/typescript.svg";
-import HtmlIcon from "../assets/html.svg";
-import CssIcon from "../assets/css.svg";
-import MongodbIcon from "../assets/mongodb.svg";
-import PostgresqlIcon from "../assets/postgresql.svg";
-import GitIcon from "../assets/git.svg";
-import JiraIcon from "../assets/jira.svg";
-import ConfluenceIcon from "../assets/confluence.svg";
-import DockerIcon from "../assets/docker.svg";
-import NestIcon from "../assets/nestjs.svg";
-import ReduxIcon from "../assets/redux.svg";
-import RedisIcon from "../assets/redis.svg";
-import GraphqlIcon from "../assets/graphql.svg";
-import LinkedIn from "../assets/linkedin.svg";
+import ReactIcon from "../assets/icons/react.svg";
+import NodeIcon from "../assets/icons/nodejs.svg";
+import JavascriptIcon from "../assets/icons/javascript.svg";
+import TypescriptIcon from "../assets/icons/typescript.svg";
+import HtmlIcon from "../assets/icons/html.svg";
+import CssIcon from "../assets/icons/css.svg";
+import MongodbIcon from "../assets/icons/mongodb.svg";
+import PostgresqlIcon from "../assets/icons/postgresql.svg";
+import GitIcon from "../assets/icons/git.svg";
+import JiraIcon from "../assets/icons/jira.svg";
+import ConfluenceIcon from "../assets/icons/confluence.svg";
+import DockerIcon from "../assets/icons/docker.svg";
+import NestIcon from "../assets/icons/nestjs.svg";
+import ReduxIcon from "../assets/icons/redux.svg";
+import RedisIcon from "../assets/icons/redis.svg";
+import GraphqlIcon from "../assets/icons/graphql.svg";
+import LinkedIn from "../assets/icons/linkedin.svg";
+import AppsIcon from "../assets/icons/apps.svg";
 
 export const MENU_LINKS = [
   {
@@ -136,6 +137,7 @@ export const ICONS = {
   MONGODB: MongodbIcon,
   POSTGRESQL: PostgresqlIcon,
   LINKED_IN: LinkedIn,
+  APPS: AppsIcon,
 };
 
 export const TECHNOLOGIES = {

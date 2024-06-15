@@ -1,5 +1,5 @@
 import Button from "./Button";
-import bmo from "../assets/bmo.gif";
+import bmo from "../assets/gifs/bmo.gif";
 
 const Hero = () => {
   const scrollToContact = () => {
