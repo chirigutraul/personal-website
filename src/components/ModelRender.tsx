@@ -27,8 +27,8 @@ const Model: FC<ModelProps> = ({
   const { actions } = useAnimations(animations, scene);
 
   useEffect(() => {
-    if (actions && actions[Object.keys(actions)[0]]) {
-      actions[Object.keys(actions)[0]].play();
+    if (actions && Object.keys(actions).length > 0) {
+      actions[Object.keys(actions)[0]]!.play();
     }
   }, [actions]);
 
