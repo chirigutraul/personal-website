@@ -8,6 +8,9 @@ import {
 import { FC, Suspense, useEffect, useRef } from "react";
 import * as THREE from "three";
 
+//@ts-ignore
+import BMO from "../assets/3d/bmo2.glb";
+
 interface ModelProps {
   isBMOFloating: Boolean;
   scale: Number;
@@ -21,7 +24,7 @@ const Model: FC<ModelProps> = ({
   position,
   isBMORotating,
 }) => {
-  const { scene, animations } = useGLTF("../src/assets/3d/bmo2.glb");
+  const { scene, animations } = useGLTF(BMO);
   const modelRef = useRef<THREE.Object3D>();
 
   const { actions } = useAnimations(animations, scene);
