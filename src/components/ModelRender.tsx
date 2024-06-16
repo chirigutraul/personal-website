@@ -5,9 +5,21 @@ import {
   OrbitControls,
   useAnimations,
 } from "@react-three/drei";
-import { Suspense, useEffect, useRef } from "react";
+import { FC, Suspense, useEffect, useRef } from "react";
 
-const Model = (props: any) => {
+interface ModelProps {
+  isBMOFloating: Boolean;
+  scale: Number;
+  position: [Number, Number, Number];
+  isBMORotating: Boolean;
+}
+
+const Model: FC<ModelProps> = ({
+  isBMOFloating,
+  scale,
+  position,
+  isBMORotating,
+}) => {
   const { scene, animations } = useGLTF("../src/assets/3d/bmo2.glb");
   const modelRef = useRef();
 
@@ -20,9 +32,17 @@ const Model = (props: any) => {
   }, [actions]);
 
   useFrame((state) => {
+    console.log("Frame rendered");
     if (modelRef.current) {
-      modelRef.current!.position.y +=
-        Math.sin(state.clock.getElapsedTime() * 3) / 10000;
+      // floating animation
+      if (isBMOFloating) {
+        modelRef.current!.position.y +=
+          Math.sin(state.clock.getElapsedTime() * 3) / 10000;
+      }
+
+      if (isBMORotating) {
+        modelRef.current!.rotation.y += 0.01;
+      }
 
       // catch me if you can mode
       // modelRef.current!.rotation.y +=
@@ -30,37 +50,52 @@ const Model = (props: any) => {
     }
   });
 
-  return <primitive object={scene} {...props} ref={modelRef} />;
+  return (
+    <primitive
+      object={scene}
+      scale={scale}
+      position={position}
+      ref={modelRef}
+    />
+  );
 };
 
-const ModelRender = () => {
+interface ModelRendererProps {
+  guideLines: Boolean;
+  isBMOFloating: Boolean;
+  isBMORotating: Boolean;
+}
+
+const ModelRender: FC<ModelRendererProps> = ({
+  guideLines,
+  isBMOFloating,
+  isBMORotating,
+}) => {
   return (
     <Canvas
-      shadows
       camera={{
-        position: [0.15, 0.15, 0.25],
+        position: [0.05, 0.1, 0.25],
         fov: 15,
       }}
       style={{
-        height: "100%",
         zIndex: 0,
-        // border: "1px solid red",
+        ...(guideLines && { border: "1px solid red" }),
       }}
     >
       <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1} castShadow />
+      <directionalLight position={[10, 10, 5]} intensity={1} />
       <Suspense fallback={null}>
         <PresentationControls speed={0.01} global>
           <Model
             scale={0.1}
-            position={[0.03, 3.995, 0.1]}
-            castShadow
-            receiveShadow
+            position={[0.01, 3.985, 0.095]}
+            isBMOFloating={isBMOFloating}
+            isBMORotating={isBMORotating}
           />
         </PresentationControls>
       </Suspense>
       <OrbitControls minPolarAngle={1} maxPolarAngle={1.5} />
-      <axesHelper args={[5]} />
+      {guideLines && <axesHelper args={[5]} />}
     </Canvas>
   );
 };

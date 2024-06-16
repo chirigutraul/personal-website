@@ -1,10 +1,28 @@
+import { useState } from "react";
 import Button from "./Button";
 import ModelRender from "./ModelRender";
+import Toggle from "./Toggle";
 
 const Hero = () => {
+  const [guideLines, setGuideLines] = useState<Boolean>(false);
+  const [isBMOFloating, setIsBMOFloating] = useState<Boolean>(false);
+  const [isBMORotating, setIsBMORotating] = useState<Boolean>(false);
+
   const scrollToContact = () => {
     const contactSection = document.getElementById("contact");
     contactSection?.scrollIntoView();
+  };
+
+  const toggleBMOFloating = () => {
+    setIsBMOFloating((current) => !current);
+  };
+
+  const toggleBMORotation = () => {
+    setIsBMORotating((current) => !current);
+  };
+
+  const toggleGuideLines = () => {
+    setGuideLines((current) => !current);
   };
 
   return (
@@ -16,7 +34,7 @@ const Hero = () => {
         <div id="#greeting-container" className="flex flex-col gap-16">
           <div
             id="#text-container"
-            className="flex flex-col max-w-xl min-w-[70ch] gap-4"
+            className="flex flex-col max-w-xl md:min-w-[70ch] gap-4"
           >
             <h1>
               Hi, I'm <a className="text-primary">Raul</a>
@@ -32,11 +50,38 @@ const Hero = () => {
             />
           </div>
         </div>
-        <div
-          id="#artwork-container"
-          className="w-full max-w-full mr-8 aspect-video xl:mr-16"
-        >
-          <ModelRender />
+        <div id="artwork-container" className="w-full max-w-full aspect-video">
+          <ModelRender
+            guideLines={guideLines}
+            isBMOFloating={isBMOFloating}
+            isBMORotating={isBMORotating}
+          />
+          <div className="flex flex-col items-end gap-4">
+            <h5 className="text-light-grey">Play with BMO</h5>
+            <div id="bmo-controlls" className="flex gap-8">
+              <Toggle
+                title="Guide lines"
+                isToggled={guideLines}
+                onToggle={toggleGuideLines}
+              />
+              <Toggle
+                title="Floating"
+                isToggled={isBMOFloating}
+                onToggle={toggleBMOFloating}
+              />
+              <Toggle
+                title="Rotate"
+                isToggled={isBMORotating}
+                onToggle={toggleBMORotation}
+              />
+            </div>
+            {/* <Button
+              text={guideLines ? "Hide Guide Lines" : "Show Guide Lines"}
+              size="small"
+              type="primary"
+              onClick={() => makeBMOJump(!guideLines)}
+            /> */}
+          </div>
         </div>
       </div>
     </div>
