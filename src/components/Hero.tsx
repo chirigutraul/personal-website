@@ -1,5 +1,6 @@
 import Button from "./Button";
 import bmo from "../assets/gifs/bmo.gif";
+import ModelRender from "./ModelRender";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -30,7 +31,8 @@ const Hero = () => {
           </div>
         </div>
         <div id="#artwork-container">
-          <img src={bmo} alt="Bmo" />
+          {/* <img src={bmo} alt="Bmo" /> */}
+          <ModelRender />
         </div>
       </div>
     </div>
