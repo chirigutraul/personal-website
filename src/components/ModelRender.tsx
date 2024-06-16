@@ -23,6 +23,10 @@ const Model = (props: any) => {
     if (modelRef.current) {
       modelRef.current!.position.y +=
         Math.sin(state.clock.getElapsedTime() * 3) / 10000;
+
+      // catch me if you can mode
+      // modelRef.current!.rotation.y +=
+      //   Math.sin(state.clock.getElapsedTime() * 6) / 100;
     }
   });
 
@@ -38,12 +42,10 @@ const ModelRender = () => {
         fov: 15,
       }}
       style={{
-        width: "700px",
-        height: "600px",
+        height: "100%",
         zIndex: 0,
         // border: "1px solid red",
       }}
-      // className="w-[500px] h-[500px]"
     >
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} intensity={1} castShadow />

@@ -1,5 +1,4 @@
 import Button from "./Button";
-import bmo from "../assets/gifs/bmo.gif";
 import ModelRender from "./ModelRender";
 
 const Hero = () => {
@@ -13,9 +12,12 @@ const Hero = () => {
       id="hero-section"
       className="px-8 py-20 text-white min-h-svh bg-gradient-to-b from-black to-medium-grey md:py-40 md:px-16"
     >
-      <div className="flex flex-col items-center gap-16 md:flex-row navbar-margin md:justify-between">
+      <div className="flex flex-col items-center gap-16 md:flex-row navbar-margin xl:justify-between">
         <div id="#greeting-container" className="flex flex-col gap-16">
-          <div id="#text-container" className="flex flex-col max-w-xl gap-4">
+          <div
+            id="#text-container"
+            className="flex flex-col max-w-xl min-w-[70ch] gap-4"
+          >
             <h1>
               Hi, I'm <a className="text-primary">Raul</a>
             </h1>
@@ -30,8 +32,10 @@ const Hero = () => {
             />
           </div>
         </div>
-        <div id="#artwork-container">
-          {/* <img src={bmo} alt="Bmo" /> */}
+        <div
+          id="#artwork-container"
+          className="w-full max-w-full mr-8 aspect-video xl:mr-16"
+        >
           <ModelRender />
         </div>
       </div>
