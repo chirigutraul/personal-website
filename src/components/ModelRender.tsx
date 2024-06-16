@@ -6,6 +6,7 @@ import {
   useAnimations,
 } from "@react-three/drei";
 import { FC, Suspense, useEffect, useRef } from "react";
+import * as THREE from "three";
 
 interface ModelProps {
   isBMOFloating: Boolean;
@@ -21,7 +22,7 @@ const Model: FC<ModelProps> = ({
   isBMORotating,
 }) => {
   const { scene, animations } = useGLTF("../src/assets/3d/bmo2.glb");
-  const modelRef = useRef();
+  const modelRef = useRef<THREE.Object3D>();
 
   const { actions } = useAnimations(animations, scene);
 
@@ -32,16 +33,15 @@ const Model: FC<ModelProps> = ({
   }, [actions]);
 
   useFrame((state) => {
-    console.log("Frame rendered");
     if (modelRef.current) {
       // floating animation
       if (isBMOFloating) {
-        modelRef.current!.position.y +=
+        modelRef.current.position.y +=
           Math.sin(state.clock.getElapsedTime() * 3) / 10000;
       }
 
       if (isBMORotating) {
-        modelRef.current!.rotation.y += 0.01;
+        modelRef.current.rotation.y += 0.01;
       }
 
       // catch me if you can mode
