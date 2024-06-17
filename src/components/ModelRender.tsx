@@ -9,7 +9,7 @@ import { FC, Suspense, useEffect, useRef } from "react";
 import * as THREE from "three";
 
 //@ts-ignore
-import BMO from "../assets/3d/bmo2.glb";
+import BMO from "../assets/3d/bmo_realistic.glb";
 
 interface ModelProps {
   isBMOFloating: Boolean;
